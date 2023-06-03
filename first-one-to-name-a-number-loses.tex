@@ -1,0 +1,43 @@
+\documentclass[a4paper]{article}
+\usepackage{hyperref}
+\pagestyle{empty}
+
+\begin{document}
+\renewcommand{\labelitemii}{\labelitemi}
+
+\section{Introduction}
+
+Within the (tech) job market, there are frequent calls both for employers to be transparent about the salaries they are offering for a role, and for candidates to be transparent about the salary they are looking for. This note provides a very simple proof as to why this is unlikely to happen: while it is to the benefit of both sides if both sides are open, both sides can gain by not being open.
+
+\section{Proof that ``the first side to name a number loses''}
+
+Assume we have:
+
+\begin{itemize}
+\item A candidate who is prepared to accept a job offer at a minimum salary of $C_{min}$ and has a realistic understanding of the maximum salary for their skills $C_{max} \ge C_{min}$.
+\item An employer who has a realistic understanding of the minimum salary for an open role $E_{min}$ and is prepared to pay a maximum salary of $E_{max} \ge E_{min}$.
+\end{itemize}
+
+The overlap between the two ranges starts at $S_{min} = max(C_{min}, E_{min}) \ge C_{min}$ and ends at $S_{max} = min(C_{max}, E_{max}) \le E_{max}$; if $S_{max} < S_{min}$ there is no overlap and ``no fit'' between the candidate and the employer.
+
+\begin{itemize}
+\item If both sides are open about their salary ranges, we assume they agree on a salary at the mid-point of the overlap $S = (S_{min} + S_{max}) / 2$. This salary is acceptable to both the candidate, as $S \ge S_{min} \ge C_{min}$, and to the employer, as $S \le S_{max} \le E_{max}$. Both sides being open about their salary ranges produces an efficient market as candidates and employers can rapidly determine if there is a fit and whether it is worth running through a costly, in terms of both time and money, interview process.
+\item If the employer is open about their salary range but the candidate is not, the candidate is free to say their minimum salary $C'_{min} = E_{max}$. Running through the same calculation as above, we obtain $S' = E_{max}$ and the candidate has gained an advantage of $S' - S \ge 0$ as $S \le E_{max}$.
+\item If the candidate is open about their salary range but the employer is not, the employer is free to say their maximum salary $E''_{max} = C_{min}$. This gives $S'' = C_{min}$ and the employer has gained an advantage of $S - S'' \ge 0$ as $S \ge C_{min}$.
+\end{itemize}
+
+As per the above, it is to the advantage of both sides not to reveal their salary range before the other, leading to the well known saying ``the first side to name a number loses''. In game theory terms, neither side being prepared to state a number is the \href{https://en.wikipedia.org/wiki/Nash\_equilibrium}{Nash equilibrium}, where neither side has anything to gain by changing their strategy. This situation produces an inefficent market, where candidates and employers ``dance around'' each other to see if a fit exists, and possibly mutually waste time when it does not.
+
+\section{Possible ways out of the Nash equilibrium}
+
+In the general case, various approaches can be used to move from an inefficient Nash equilibrium towards a more efficient model:
+
+\begin{itemize}
+\item A build up of trust between the two parties. This can be successful when there is time to build trust between the parties and a way to take incremental steps towards the goal, as for instance happened towards the end of the Cold War when \href{https://en.wikipedia.org/wiki/START\_I}{the USA and USSR agreed to stop building an ever increasing nuclear arsenals}, but it is hard to imagine how such an approach could be applicable to the job market, which has many independent players and compressed timescales.
+\item A neutral third party who can be trusted to act as an intermediary; it is difficult to see who could act as such a third party in the job market.
+  \begin{itemize}
+  \item Third party recruiters will sometimes claim they can act as the neutral third party as ``they get paid more if the candidate gets a higher salary''. However, due to the contingent fee model typically used for third party recruiters, this is true only in the case when there is only one candidate for a role: once multiple candidates are involved, it may become advantageous to the recruiter to encourage the candidate to accept a lower salary, as they would rather have (e.g.) 20\% of £45k than 0\% of £50k. Therefore third-party recruiters are not suitable as the neutral third party in most cases.
+  \end{itemize}
+\item Imposition of ``trust'' via legislation or similar. This has been done in some places, most notably California and New York. However, this has led to the predictable response of companies classifying all roles as ``software engineer'' and stating things like "The salary ranges for this role is from \$50,000 to \$500,000'', which is frankly not useful to anyone.
+\end{itemize}
+\end{document}
